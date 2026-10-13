@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "promptab"
+version = "0.1.0"
+description = "Statistically sound A/B testing for LLM prompts, with Bayesian early stopping."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "click>=8.1"]
+keywords = ["llm", "evaluation", "ab-testing", "bayesian", "statistics", "promptfoo"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+promptab = "promptab.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/promptab"]
